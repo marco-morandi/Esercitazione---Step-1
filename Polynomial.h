@@ -1,5 +1,5 @@
 /// @file Polynomial.h
-///	@brief Declaration of the class Polynomial	
+///	@brief Class Polynomial: declaration of the class Polynomial	
 /// @author Marco Morandi - Igor Coppola
 
 #ifndef POLYNOMIAL_H

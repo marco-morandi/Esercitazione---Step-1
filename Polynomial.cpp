@@ -1,5 +1,5 @@
 /// @file Polynomial.cpp
-///	@brief class Polynomial: implementations of the functions
+///	@brief Class Polynomial: implementations of the functions
 /// @author Marco Morandi - Igor Coppola
 
 #include <iostream>
@@ -215,13 +215,17 @@ void Polynomial::Dump() {
 
 	cout << "*** Polynomial - Dump() ***\n\n";
 	 
-	for (int i = 0; i <= degree; i++) {
-		if (coeffs[i] != 0) {
-			cout << coeffs[i];
-			cout << "(x^" << i << ")";
+	if (degree == 0)
+		cout << coeffs[0];
+	else {
+		for (int i = 0; i <= degree; i++) {
+			if (coeffs[i] != 0) {
+				cout << coeffs[i];
+				cout << "(x^" << i << ")";
+			}
+			if (i != degree && coeffs[i+1] > 0)
+				cout << "+";
 		}
-		if (i != degree && coeffs[i+1] > 0)
-			cout << "+";
 	}
 
 	cout << "\n\n";

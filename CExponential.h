@@ -1,5 +1,5 @@
 /*! @file CExponential.h
-	@brief A class to represent exponential function
+	@brief Class Exponential: class to represent exponential function
 	@author Igor Coppola - Marco Morandi 
 
 	Details.

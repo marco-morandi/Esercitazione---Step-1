@@ -36,8 +36,6 @@ public:
 	virtual void WarningMessage(const char* string) = 0;
 	/// @}
 
-
-    
 };
 
 #endif

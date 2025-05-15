@@ -1,5 +1,5 @@
 /// @file Power.h
-/// @brief Declaration of a class for power function inherited from CFuntion.h
+/// @brief Class Power: declaration of a class for power function inherited from CFuntion.h
 /// @author Marco Morandi
 
 #ifndef POWER_H

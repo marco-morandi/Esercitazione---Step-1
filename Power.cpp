@@ -1,5 +1,5 @@
 /// @file Power.cpp
-///	@brief class Power: implementations of the functions
+///	@brief Class Power: implementations of the functions
 /// @author Marco Morandi
 
 #include <iostream>
@@ -80,5 +80,82 @@ void Power::Reset() {
 
 }
 
-/// @brief returns the value of the power function given a specific value of the function
+/// @brief returns the value of the power function given a specific value of the variable
 /// @param in specific value of the independent variable
+/// @return res result of the function calculated with that specific value
+double Power::GetValue(double in) {
+
+    double res = 0.;
+
+    if ( in == 0 && e_coeff == 0) {
+        ErrorMessage("GetValue() - 0^0 is undeterminate, returning -1 by defualt");
+        res = -1;
+    }
+    else {
+        
+        res = k_coeff * pow(in, e_coeff);
+
+    }
+
+    return res;
+}
+
+/// @brief function that changes the parameters of the power function
+/// @param k new coefficient
+/// @param e new exponent
+void Power::SetParam(double k, double e) {
+
+    k_coeff = k;
+
+    if ((e <= -1) || (e >= 1) || (e == 0)) 
+        e_coeff = e;
+    else { // can't manage even roots with possible negative base
+        ErrorMessage("SetParam() - This function can't be a root, setting exponent to 1 by default");
+        e_coeff = 1;
+    }
+
+}
+
+/// @brief function that changes the coefficient of the independent variable
+/// @param k new coefficient
+void Power::SetCoeff(double k) {
+
+    k_coeff = k;
+
+}
+
+/// @brief function that changes the exponent of the power function
+/// @param e new exponent
+void Power::SetExp(double e) {
+
+    e_coeff = e;
+
+}
+
+/// @brief prints the dump of the object
+void Power::Dump() {
+
+    cout << "*** Power - Dump() ***\n\n";
+
+    cout << k_coeff << " * x^" << e_coeff << "\n\n";
+
+}
+
+/// @brief write an error message 
+/// @param string message to be printed
+void Power::ErrorMessage(const char* string) {
+
+	cout << endl << "ERROR -- Power -- ";
+	cout << string << "\n\n";
+
+}
+
+/// @brief write a warning message 
+/// @param string message to be printed
+void Power::WarningMessage(const char* string) {
+
+	cout << endl << "WARNING -- Power -- ";
+	cout << string << "\n\n";
+
+}
+
