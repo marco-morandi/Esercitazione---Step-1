@@ -30,6 +30,7 @@ public:
     /// @{
     Power& operator=(const Power& p);
     bool operator==(const Power& p);
+    Power operator+(const Power& p);
     /// @}
 
     /// @name BASIC HANDLING

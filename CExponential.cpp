@@ -147,3 +147,19 @@ void Exponential::WarningMessage(const char *string)
     cout << endl << "Error -- Exponential --";
     cout << string << endl;
 }
+
+/// @brief do sum of the exponential
+/// @param p reference to the exponential function on the right side of the operator
+/// @return return the exponential function that was obtained by the sum of two exponential function
+Exponential Exponential :: operator+(const Exponential& e1)
+{
+    if (c_coeff != e1.c_coeff || b_coeff != e1.b_coeff)
+    {
+        ErrorMessage("Operator = : Impossible to execute the sum, because exponent coeffs are different (or base coeff). By defaut it will be returned the first exponent that was summed.");
+        return *this;
+    }
+    Exponential e_res;
+    double new_k_coeff = k_coeff + e1.k_coeff;
+    e_res.SetParam(b_coeff, new_k_coeff, c_coeff);
+    return e_res;
+}

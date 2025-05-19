@@ -73,6 +73,25 @@ bool Power::operator==(const Power& p) {
 
 }
 
+/// @brief overload of operator +
+/// @param p reference to the object on the right side of the operator
+/// @return p_sum that is the sum of the two power functions
+Power Power::operator+(const Power& p) {
+
+    if (e_coeff != p.e_coeff) { 
+        ErrorMessage("operator+() - The power functions must have the same exponent in order to be summed; returning the starting power function (adding 0).");
+        return *this;
+    }
+
+    double new_kcoeff = k_coeff + p.k_coeff;
+
+    Power p_sum(new_kcoeff, e_coeff);
+
+    return p_sum;
+
+}
+
+
 /// @brief total reset of the object
 void Power::Reset() {
 

@@ -40,6 +40,7 @@ public:
 	/// @{
         Exponential& operator=(const Exponential& p);
         bool operator==(const Exponential& p);
+        Exponential operator+(const Exponential& e1);
 	/// @}
 
     /// @name SETTER / GETTERS
